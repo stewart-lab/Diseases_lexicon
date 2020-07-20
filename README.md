@@ -1,17 +1,17 @@
 Diseases lexicon
 
-Resources:  
+**Resources:**  
 •	Unified Medical Language System (UMLS) Metathesaurus  
 •	Systematized Nomenclature of Medicine -- Clinical Terms (SNOMED - CT)  
 
-UMLS Metathesaurus:  
+**UMLS Metathesaurus:**  
 Compiling UMLS Metathesaurus is a separate project. Please see our project at https://github.com/CutaneousBioinf/LiteratureMiningTool/tree/master/ConceptMap/UMLSMetathesaurusCompiler   
 
 Diseases and synonyms can be retrived based on the UMLS semantic types related to DISORDER. We developed a Java program to achieve the same.    
 $ javac DiseaseDictionaryGenerator.java  
 $ java DiseaseDictionaryGenerator ALL_CONCEPTS_FILE UMLS_DISEASE_FILE  
  
-SNOMED - CT:  
+**SNOMED - CT:**  
 We need UMLS Metathesaurus license for downloading and using SNOMED CT. The resource can be downloaded from UMLS Terminology Services (https://uts.nlm.nih.gov//home.html). Download UMLS Metathesaurus and install on server by selecting the option SNOMED CT.  
 
 Processing MRCONSO.RRF a file:    
@@ -36,14 +36,14 @@ We developed a Java program to extract disease concepts from SNOMED CT.
 $ javac DiseaseDictionaryGenerator.java  
 $ java DiseaseDictionaryGenerator OUTPUT_FILE4 SNOEMED_DISEASES_FILE   
 
-UMLS Metathesaurus + SNOMED CT:  
+**UMLS Metathesaurus + SNOMED CT:**  
 SNOMED CT is from UMLS Metathesaurus only. We assume that the disease concepts from both resources may overlap. We also noticed that the concepts have same CUI_TUI. For example, ‘acute abdominal pain syndrome’ has CUI_TUI: C0000727_T184 in both resources.  
 
 We combined the resources using Linux command.  
 $ cat UMLS_DISEASE_FILE SNOEMED_DISEASES_FILE | sort | uniq -i > DISEASES_LEXICON_v1 
 
-Post processing of diseases lexicon:  
-We noticed stop words as disease synonyms (e.g. ‘In’ for ‘Present’). Such synonyms will give false frequency count in the literature. Therefore, it is good to remove the disease synonyms that are actually stop words.  
+**Post processing of diseases lexicon:**  
+A. We noticed stop words as disease synonyms (e.g. ‘In’ for ‘Present’). Such synonyms will give false frequency count in the literature. Therefore, it is good to remove the disease synonyms that are actually stop words.  
 
 $ javac StopwordsAsDiseaseSynonyms.java  
 $ java StopwordsAsDiseaseSynonyms DISEASES_LEXICON_v1 STOPWORDS_AS_DISEASES_AND_SYNONYMS  
@@ -51,9 +51,9 @@ $ java StopwordsAsDiseaseSynonyms DISEASES_LEXICON_v1 STOPWORDS_AS_DISEASES_AND_
 $ javac StopwordsAsDiseaseSynonymsRemover.java  
 $ java StopwordsAsDiseaseSynonymsRemover STOP_WORDS DISEASES_LEXICON_v1 DISEASES_LEXICON_v1_NO_STOPWORDS  
 
-We collected stopwords from our previous work and various resources. File: stopwords.txt 
+We collected stopwords from our previous work and various resources. **File: stopwords.txt** 
 
-We noticed that certain disease concepts map to multiple CUIs. This will lead to independent counts for each CUI. Therefore, we combined the multiple CUIs together and assigned a customized CUI.  
+B. We noticed that certain disease concepts map to multiple CUIs. This will lead to independent counts for each CUI. Therefore, we combined the multiple CUIs together and assigned a customized CUI.  
 
 $ javac DiseasesWithMultipleIDRetriever.java  
 $ javac DiseasesWithMultipleIDRetriever DISEASES_LEXICON_v1_NO_STOPWORDS DISEASES_WITH_MULTIPLE_IDs     
