@@ -23,9 +23,9 @@ A. Extraction of unique concept identifier (CUI) and unique semantic type identi
 $ javac MRSTYCuiTuiGenerator.java  
 $ java MRSTYCuiTuiGenerator ~/MRSTY.RRF OUTPUT_FILE2  
 
-B. Grouping of concepts with same CUI, but different TUI 
-$ javac MRSTYCuiTuiGrouper.java 
-$ java MRSTYCuiTuiGrouper OUTPUT_FILE2 OUTPUT_FILE3 
+B. Grouping of concepts with same CUI, but different TUI  
+$ javac MRSTYCuiTuiGrouper.java  
+$ java MRSTYCuiTuiGrouper OUTPUT_FILE2 OUTPUT_FILE3  
 
 The processed files from MRCONSO.RRF and MRSTY.RRF are used for generating diseases lexicon. We need semantic group file (i.e. SemGroups_2018.txt) which can be downloaded from NCBI MetaMap (https://metamap.nlm.nih.gov/Docs/SemGroups_2018.txt). The execution may takes several hours depending on the system or server used to run the program.  
 
