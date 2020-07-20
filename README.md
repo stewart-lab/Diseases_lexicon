@@ -1,16 +1,16 @@
 Diseases lexicon
 
 Resources:
-•	Unified Medical Language System (UMLS) Metathesaurus
-•	Systematized Nomenclature of Medicine -- Clinical Terms (SNOMED - CT)
+•	Unified Medical Language System (UMLS) Metathesaurus  
+•	Systematized Nomenclature of Medicine -- Clinical Terms (SNOMED - CT)  
 
 UMLS Metathesaurus:
 Compiling UMLS Metathesaurus is a separate project. Please see our project at https://github.com/CutaneousBioinf/LiteratureMiningTool/tree/master/ConceptMap/UMLSMetathesaurusCompiler
 
 Diseases and synonyms can be retrived based on the UMLS semantic types related to DISORDER. We developed a Java program to achieve the same.  
 
-$ javac DiseaseDictionaryGenerator.java
-$ java DiseaseDictionaryGenerator ALL_CONCEPTS_FILE UMLS_DISEASE_FILE 
+$ javac DiseaseDictionaryGenerator.java 
+$ java DiseaseDictionaryGenerator ALL_CONCEPTS_FILE UMLS_DISEASE_FILE  
  
 SNOMED - CT:
 We need UMLS Metathesaurus license for downloading and using SNOMED CT. The resource can be downloaded from UMLS Terminology Services (https://uts.nlm.nih.gov//home.html). Download UMLS Metathesaurus and install on server by selecting the option SNOMED CT.
