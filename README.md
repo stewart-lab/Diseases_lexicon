@@ -14,14 +14,14 @@ $ java DiseaseDictionaryGenerator ALL_CONCEPTS_FILE UMLS_DISEASE_FILE
 SNOMED - CT:  
 We need UMLS Metathesaurus license for downloading and using SNOMED CT. The resource can be downloaded from UMLS Terminology Services (https://uts.nlm.nih.gov//home.html). Download UMLS Metathesaurus and install on server by selecting the option SNOMED CT.  
 
-Processing MRCONSO.RRF a file:  
+Processing MRCONSO.RRF a file:    
 $ javac MRCONSOPreferredVocabularyGenerator.java  
 $ java MRCONSOPreferredVocabularyGenerator ~/MRCONSO.RRF OUTPUT_FILE1 
 
 Processing MRSTY.RRF a file:  
-A. Extraction of unique concept identifier (CUI) and unique semantic type identifier (TUI) 
-$ javac MRSTYCuiTuiGenerator.java 
-$ java MRSTYCuiTuiGenerator ~/MRSTY.RRF OUTPUT_FILE2 
+A. Extraction of unique concept identifier (CUI) and unique semantic type identifier (TUI)  
+$ javac MRSTYCuiTuiGenerator.java  
+$ java MRSTYCuiTuiGenerator ~/MRSTY.RRF OUTPUT_FILE2  
 
 B. Grouping of concepts with same CUI, but different TUI 
 $ javac MRSTYCuiTuiGrouper.java 
