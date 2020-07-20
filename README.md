@@ -45,18 +45,18 @@ $ cat UMLS_DISEASE_FILE SNOEMED_DISEASES_FILE | sort | uniq -i > DISEASES_LEXICO
 Post processing of diseases lexicon:  
 We noticed stop words as disease synonyms (e.g. ‘In’ for ‘Present’). Such synonyms will give false frequency count in the literature. Therefore, it is good to remove the disease synonyms that are actually stop words.  
 
-$ javac StopwordsAsDiseaseSynonyms.java 
-$ java StopwordsAsDiseaseSynonyms DISEASES_LEXICON_v1 STOPWORDS_AS_DISEASES_AND_SYNONYMS 
+$ javac StopwordsAsDiseaseSynonyms.java  
+$ java StopwordsAsDiseaseSynonyms DISEASES_LEXICON_v1 STOPWORDS_AS_DISEASES_AND_SYNONYMS  
 
-$ javac StopwordsAsDiseaseSynonymsRemover.java 
-$ java StopwordsAsDiseaseSynonymsRemover STOP_WORDS DISEASES_LEXICON_v1 DISEASES_LEXICON_v1_NO_STOPWORDS 
+$ javac StopwordsAsDiseaseSynonymsRemover.java  
+$ java StopwordsAsDiseaseSynonymsRemover STOP_WORDS DISEASES_LEXICON_v1 DISEASES_LEXICON_v1_NO_STOPWORDS  
 
 We collected stopwords from our previous work and various resources. File: stopwords.txt 
 
 We noticed that certain disease concepts map to multiple CUIs. This will lead to independent counts for each CUI. Therefore, we combined the multiple CUIs together and assigned a customized CUI.  
 
-$ javac DiseasesWithMultipleIDRetriever.java 
-$ javac DiseasesWithMultipleIDRetriever DISEASES_LEXICON_v1_NO_STOPWORDS DISEASES_WITH_MULTIPLE_IDs    
+$ javac DiseasesWithMultipleIDRetriever.java  
+$ javac DiseasesWithMultipleIDRetriever DISEASES_LEXICON_v1_NO_STOPWORDS DISEASES_WITH_MULTIPLE_IDs     
 
 $ javac DiseasesWithMultipleCUICompiler.java   
 $ java DiseasesWithMultipleCUICompiler DISEASES_LEXICON_v1_NO_STOPWORDS DISEASES_WITH_MULTIPLE_IDs OUTPUT_FILE5  
