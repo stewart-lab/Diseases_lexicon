@@ -1,4 +1,4 @@
-Diseases lexicon
+**Diseases lexicon**
 
 **Resources:**  
 •	Unified Medical Language System (UMLS) Metathesaurus  
