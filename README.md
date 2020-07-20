@@ -63,3 +63,10 @@ $ java DiseasesWithMultipleCUICompiler DISEASES_LEXICON_v1_NO_STOPWORDS DISEASES
 
 $ javac DiseasesWithModifiedCUIUpdater.java  
 $ java DiseasesWithModifiedCUIUpdater OUTPUT_FILE5 DISEASES_LEXICON_v1_NO_STOPWORDS DISEASES_LEXICON_v2  
+
+
+Java version used for development: JavaSE-1.8 
+  
+Author: Kalpana Raja 
+  
+Affiliation: Morgridge Institute for Research, Madison, WI, USA. 
